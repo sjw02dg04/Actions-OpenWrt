@@ -21,10 +21,19 @@ Build OpenWrt using GitHub Actions
 ## Acknowledgments
 
 - [Microsoft](https://www.microsoft.com)
+<<<<<<< HEAD
+=======
+- [Microsoft Azure](https://azure.microsoft.com)
+- [GitHub](https://github.com)
+>>>>>>> upstream/master
 - [GitHub Actions](https://github.com/features/actions)
 - [tmate](https://github.com/tmate-io/tmate)
 - [mxschmitt/action-tmate](https://github.com/mxschmitt/action-tmate)
 - [csexton/debugger-action](https://github.com/csexton/debugger-action)
+<<<<<<< HEAD
+=======
+- [Cisco](https://www.cisco.com/)
+>>>>>>> upstream/master
 - [OpenWrt](https://github.com/openwrt/openwrt)
 - [Lean's OpenWrt](https://github.com/coolsnowwolf/lede)
 
