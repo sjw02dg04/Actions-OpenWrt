@@ -91,15 +91,21 @@ jobs:
           cd openwrt
           echo "$(nproc) thread build."
           make -j$(nproc) || make -j1 V=s
-          
-      - name: Upload targets 上传固件
-        uses: actions/upload-artifact@master
-        with:
-          name: OpenWrt firmware 固件
-          path: openwrt/bin/targets
 
-      - name: Upload packages 上传插件包
+      - name: Upload bin directory 上传bin文件夹
         uses: actions/upload-artifact@master
         with:
-          name: OpenWrt packages 插件包
-          path: openwrt/bin/packages
+          name: OpenWrt_bin bin文件夹
+          path: openwrt/bin
+
+      - name: Organize files 整理文件
+        run: |
+          cd openwrt/bin/targets/*/*
+          rm -rf packages
+          echo "::set-env name=FIRMWARE::$(pwd)"
+
+      - name: Upload firmware 上传固件
+        uses: actions/upload-artifact@master
+        with:
+          name: OpenWrt_firmware openwrt固件
+          path: ${{ env.FIRMWARE }}
