@@ -14,7 +14,7 @@ env:
   DIY_SH: diy.sh
   #==========================
   # Specify here the OpenWrt Repo URL and Branch
-  # 在这里指定你的OpenWrt的Repo URL和Branch
+  # 在这里指定你的OpenWrt的仓库地址URL和分支
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   #==========================
