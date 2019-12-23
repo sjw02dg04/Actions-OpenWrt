@@ -19,14 +19,14 @@ env:
   REPO_BRANCH: master
   #==========================
 
-name: openwrt_$CONFIG_FILE
+name: openwrt_${{ env.CONFIG_FILE }}
 
 on:
   push:
     branches:
       - master
     paths:
-      - $CONFIG_FILE
+      - ${{ env.CONFIG_FILE }}
 #  release:
 #    types: [published]
 #  schedule:
