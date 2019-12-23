@@ -4,11 +4,12 @@
 # Author: P3TERX
 # Blog: https://p3terx.com
 #=================================================
+
+#==========================
+# 工作流的名字（随便写）
+name: openwrt_acrh17
+#==========================
 env:
-  #==========================
-  # Specify here your config file
-  # 在这里指定你的配置文件名
-  CONFIG_FILE: acrh17.config
   #==========================
   # 编译前运行的脚本
   DIY_SH: diy.sh
@@ -18,20 +19,29 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   #==========================
-
-name: openwrt_acrh17
-
+  # Specify here your config file
+  # 在这里指定你的配置文件名
+  CONFIG_FILE: "acrh17.config"
+  #==========================
 on:
   push:
     paths:
-      - acrh17.config
-    # 改成和上方一样
+      #==========================
+      - "acrh17.config"
+      # 改成和上方CONFIG_FILE 一样
+      #==========================
     branches:
       - master
+#=============
+#取消下方注释 = 发布release就编译
 #  release:
 #    types: [published]
+#=============
+#取消下方注释 = 每天凌晨4点编译
 #  schedule:
 #    - cron: 0 20 * * *
+#=============
+#取消下方注释 = 点[★star]一键编译
 #  watch:
 #    types: [started]
 
