@@ -19,7 +19,7 @@ env:
   REPO_BRANCH: master
   #==========================
 
-name: openwrt_${{ env.CONFIG_FILE }}
+name: openwrt_test
 
 on:
   push:
