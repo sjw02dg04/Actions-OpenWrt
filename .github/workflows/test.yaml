@@ -8,7 +8,7 @@ env:
   #==========================
   # Specify here your config file
   # 在这里指定你的配置文件名
-  CONFIG_FILE: "acrh17.config"
+  CONFIG_FILE: "test.config"
   #==========================
   # 编译前运行的脚本
   DIY_SH: "diy.sh"
