@@ -8,10 +8,10 @@ env:
   #==========================
   # Specify here your config file
   # 在这里指定你的配置文件名
-  CONFIG_FILE: "test.config"
+  CONFIG_FILE: test.config
   #==========================
   # 编译前运行的脚本
-  DIY_SH: "diy.sh"
+  DIY_SH: diy.sh
   #==========================
   # Specify here the OpenWrt Repo URL and Branch
   # 在这里指定你的OpenWrt的Repo URL和Branch
@@ -26,7 +26,7 @@ on:
     branches:
       - master
     paths:
-      - ${{ env.CONFIG_FILE }}
+      - test.config
 #  release:
 #    types: [published]
 #  schedule:
