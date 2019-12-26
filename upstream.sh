@@ -1,4 +1,5 @@
 #!/bin/bash
+git remote add upstream https://github.com/P3TERX/Actions-OpenWrt.git
 git fetch --all 
 git reset --hard origin/master
 git pull
