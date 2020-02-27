@@ -115,7 +115,9 @@ jobs:
         run: |
           git config --local user.email "lietxia@gmail.com"
           git config --local user.name "lietxia"
-          git add openwrt/bin/targets/* && git commit -m "github_actions" -a
+          mv openwrt/bin/targets bin
+          rm -rf openwrt
+          git add bin/* && git commit -m "github_actions" -a
 
       - name: Push Commits 发布
         uses: ad-m/github-push-action@master
