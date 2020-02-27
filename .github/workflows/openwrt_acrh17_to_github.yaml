@@ -113,6 +113,8 @@ jobs:
 
       - name: git add commit 添加commit
         run: |
+          git config --local user.email "lietxia@gmail.com"
+          git config --local user.name "lietxia"
           git add openwrt/bin/targets/* && git commit -m "github_actions" -a
 
       - name: Push Commits 发布
