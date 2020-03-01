@@ -105,3 +105,16 @@ jobs:
         with:
           name: OpenWrt_firmware openwrt固件
           path: ${{ env.FIRMWARE }}
+
+      - name: upload to repo
+        run: |
+          mkdir rom || echo "1"
+          mv openwrt/bin/targets/ rom/
+          rm -rf openwrt/
+          git add rom/
+          git commit -m 'add rom'
+
+      - name: Push Commits 发布	
+        uses: ad-m/github-push-action@master	
+        with:	
+          github_token: ${{ secrets.GITHUB_TOKEN }}
