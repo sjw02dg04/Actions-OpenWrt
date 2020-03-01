@@ -111,6 +111,8 @@ jobs:
           mkdir rom || echo "1"
           mv openwrt/bin/targets/ rom/
           rm -rf openwrt/
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
           git add rom/
           git commit -m 'add rom'
 
