@@ -108,7 +108,7 @@ jobs:
           git config --local user.email "lietxia@gmail.com"
           git config --local user.name "lietxia"
           git clone https://lietxia_admin:${GITEE_TOKEN}@gitee.com/lietxia_admin/openwrt_bin.git rom2
-          mv -rf art rom2/art/
+          mv -f art rom2/art/
           cd rom2
           git add . || echo "1"
           git commit -m "github_actions" -a;
@@ -119,7 +119,7 @@ jobs:
           git config --local user.email "lietxia@gmail.com"
           git config --local user.name "lietxia"
           mkdir -p rom || echo "1"
-          mv -rf openwrt/bin/targets/ rom/
+          mv -f openwrt/bin/targets/ rom/
           rm -rf openwrt/
           git add . || echo "1"
           git commit -m "github_actions" -a || echo "2"
