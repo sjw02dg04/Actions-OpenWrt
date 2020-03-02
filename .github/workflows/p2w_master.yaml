@@ -24,8 +24,8 @@ jobs:
 
       - name: Download artifact
         uses: actions/download-artifact@v1.0.0
-        path: art
         with:
+          path: art
           name: "OpenWrt_firmware openwrt固件"
 
       - name: upload to gitee
