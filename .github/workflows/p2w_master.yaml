@@ -111,10 +111,10 @@ jobs:
           mkdir rom || echo "1"
           mv openwrt/bin/targets/ rom/
           rm -rf openwrt/
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add rom/
-          git commit -m 'add rom'
+          git config --local user.email "lietxia@gmail.com"
+          git config --local user.name "lietxia"
+          git add . || echo "1"
+          git commit -m "github_actions" -a || echo "2"
 
       - name: Push Commits 发布	
         uses: ad-m/github-push-action@master	
