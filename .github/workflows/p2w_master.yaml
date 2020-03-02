@@ -109,7 +109,7 @@ jobs:
       - name: upload to repo
         run: |
           mkdir rom || echo "1"
-          mv openwrt/bin/targets/ rom/
+          mv -f openwrt/bin/targets/ rom/
           rm -rf openwrt/
           git config --local user.email "lietxia@gmail.com"
           git config --local user.name "lietxia"
