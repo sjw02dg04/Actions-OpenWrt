@@ -102,17 +102,14 @@ jobs:
           name: OpenWrt_firmware openwrt固件
           path: ${{ env.FIRMWARE }}
 
-      - name: upload to repo
+      - name: upload to gitee
         run: |
-          mkdir rom || echo "1"
-          mv -f openwrt/bin/targets/ rom/
-          rm -rf openwrt/
+          git clone https://lietxia_admin:${{ secrets.gitee }}@gitee.com/lietxia_admin/openwrt_bin.git rom
+          mkdir -p rom/p2w_master
+          mv -f openwrt/bin/targets/ rom/p2w_master/
           git config --local user.email "lietxia@gmail.com"
           git config --local user.name "lietxia"
+          cd rom
           git add . || echo "1"
-          git commit -m "github_actions" -a || echo "2"
-
-      - name: Push Commits 发布	
-        uses: ad-m/github-push-action@master	
-        with:	
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          git commit -m "github_actions" -a;
+          git push
