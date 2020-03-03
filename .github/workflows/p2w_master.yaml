@@ -113,18 +113,3 @@ jobs:
           git add . || echo "1"
           git commit -m "github_actions" -a;
           git push
-
-      - name: upload to repo
-        run: |
-          git config --global user.email "lietxia@gmail.com"
-          git config --global user.name "lietxia"
-          mkdir -p rom || echo "1"
-          mv -f openwrt/bin/targets/ rom/
-          rm -rf openwrt/
-          git add . || echo "1"
-          git commit -m "github_actions" -a || echo "2"
-
-      - name: Push Commits 发布	
-        uses: ad-m/github-push-action@master	
-        with:	
-          github_token: ${{ secrets.GITHUB_TOKEN }}
