@@ -110,3 +110,16 @@ jobs:
         with:
           name: OpenWrt_firmware openwrt固件
           path: ${{ env.FIRMWARE }}
+
+      - name: upload to gitee 传到码云
+        run: |
+          git config --global user.email "lietxia@gmail.com"
+          git config --global user.name "lietxia"
+          git clone https://lietxia_admin:${GITEE_TOKEN}@gitee.com/lietxia_admin/openwrt_bin.git rom
+          mkdir -p rom/acrh17/
+          rm -rf rom/acrh17/
+          cp -rf openwrt/bin/targets/ rom/acrh17/
+          cd rom
+          git add . || echo "1"
+          git commit -m "github_actions" -a;
+          git push
