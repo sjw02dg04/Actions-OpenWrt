@@ -105,8 +105,8 @@ jobs:
 
       - name: upload to gitee
         run: |
-          git config --local user.email "lietxia@gmail.com"
-          git config --local user.name "lietxia"
+          git config --global user.email "lietxia@gmail.com"
+          git config --global user.name "lietxia"
           git clone https://lietxia_admin:${GITEE_TOKEN}@gitee.com/lietxia_admin/openwrt_bin.git rom2
           cp -rf openwrt/bin/targets/ rom2/
           cd rom2
@@ -116,8 +116,8 @@ jobs:
 
       - name: upload to repo
         run: |
-          git config --local user.email "lietxia@gmail.com"
-          git config --local user.name "lietxia"
+          git config --global user.email "lietxia@gmail.com"
+          git config --global user.name "lietxia"
           mkdir -p rom || echo "1"
           mv -f openwrt/bin/targets/ rom/
           rm -rf openwrt/
