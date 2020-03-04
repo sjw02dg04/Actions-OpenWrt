@@ -23,6 +23,7 @@ env:
   # 在这里指定你的配置文件名
   CONFIG_FILE: "p2w_r619ac.config"
   #==========================
+  GITEE_TOKEN: ${{ secrets.gitee }}  
 on:
   push:
     paths:
