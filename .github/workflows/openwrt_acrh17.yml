@@ -23,6 +23,7 @@ env:
   # 在这里指定你的配置文件名
   CONFIG_FILE: "acrh17.config"
   #==========================
+  GITEE_TOKEN: ${{ secrets.gitee }}
 on:
   push:
     paths:
