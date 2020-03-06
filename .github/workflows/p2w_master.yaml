@@ -107,7 +107,7 @@ jobs:
         run: |
           git config --global user.email "lietxia@gmail.com"
           git config --global user.name "lietxia"
-          git clone https://lietxia_admin:${GITEE_TOKEN}@gitee.com/lietxia_admin/openwrt_bin.git rom
+          git clone  --depth 1 https://lietxia_admin:${GITEE_TOKEN}@gitee.com/lietxia_admin/openwrt_bin.git rom
           mkdir -p rom/p2w_m/
           rm -rf rom/p2w_m/*
           cp -rf openwrt/bin/targets/ rom/p2w_m/
