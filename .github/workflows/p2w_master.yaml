@@ -23,7 +23,7 @@ env:
   # 在这里指定你的配置文件名
   CONFIG_FILE: "p2w_master.config"
   #==========================
-  GITEE_TOKEN: ${{ secrets.gitee }}
+  # GITEE_TOKEN: ${{ secrets.gitee }}
 on:
   push:
     paths:
@@ -102,16 +102,3 @@ jobs:
         with:
           name: OpenWrt_firmware openwrt固件
           path: ${{ env.FIRMWARE }}
-
-      - name: upload to gitee 传到码云
-        run: |
-          git config --global user.email "lietxia@gmail.com"
-          git config --global user.name "lietxia"
-          git clone  --depth 1 https://lietxia_admin:${GITEE_TOKEN}@gitee.com/lietxia_admin/openwrt_bin.git rom
-          mkdir -p rom/p2w_m/
-          rm -rf rom/p2w_m/*
-          cp -rf openwrt/bin/targets/ rom/p2w_m/
-          cd rom
-          git add . || echo "1"
-          git commit -m "github_actions" -a;
-          git push || (sleep 30m && git push) || (sleep 30m && git push)
