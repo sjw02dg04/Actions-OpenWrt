@@ -115,6 +115,6 @@ jobs:
       - name: Upload release
         uses: yakuhzi/action-release@master
         with:
-          file: ${{ env.FIRMWARE }}
+          file: openwrt/bin/targets/
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
