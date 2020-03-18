@@ -97,8 +97,11 @@ jobs:
           cd openwrt/bin/targets/*/*
           rm -rf packages
           echo "::set-env name=FIRMWARE::$(pwd)"
-      - name: Upload firmware 上传固件
-        uses: actions/upload-artifact@master
+          
+      - name: Zip Release
+        uses: TheDoctor0/zip-release@v0.2.1
         with:
-          name: OpenWrt_firmware openwrt固件
-          path: ${{ env.FIRMWARE }}
+          # Filename for archive
+          filename: release.zip
+          # Base path for archive files
+          path: openwrt/bin/targets
