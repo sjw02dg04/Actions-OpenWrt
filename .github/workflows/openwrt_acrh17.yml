@@ -112,9 +112,12 @@ jobs:
           name: OpenWrt_firmware openwrt固件
           path: ${{ env.FIRMWARE }}
         
-      - name: Upload release
-        uses: yakuhzi/action-release@master
+      - name: Upload Release Asset
+        uses: svenstaro/upload-release-action@v1-release
         with:
-          file: openwrt/bin/targets/
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+          repo_token: ${{ secrets.RELEASES_TOKEN }}
+          file: ${{ env.FIRMWARE }}/* # https://www.npmjs.com/package/glob
+          # asset_name: ${{ env.FILE_NAME }}-${{ github.ref }}.zip
+          tag: ${{ github.ref }}
+          overwrite: true
+          file_glob: true
